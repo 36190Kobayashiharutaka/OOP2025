@@ -13,27 +13,21 @@
                 PrintFeetToMeterList(f, e);
             }
             //フィートからメートルへの対応表を出力
-                static void PrintFeetToMeterList(int f, int e) {
-                    for (int feet = f; feet <= e; feet++) {
-                        double meter = FeetToMeter(feet);
-                        Console.WriteLine($"{feet}ft = {meter:0.0000}");
-                    }
+            static void PrintFeetToMeterList(int f, int e) {
+                FeetConverter fc = new FeetConverter();
+                for (int feet = f; feet <= e; feet++) {
+                    double meter = fc.ToMeter(feet);
+                    Console.WriteLine($"{feet}ft = {meter:0.0000}");
                 }
+            }
             //メートルかフィートへの対応表を出力
             static void PrintMeterToFeetList(int f, int e) {
+                FeetConverter fc = new FeetConverter();
+
                 for (int meter = f; meter <= e; meter++) {
-                    double feet = MeterToFeet(meter);
+                    double feet = fc.FromMeter(meter);
                     Console.WriteLine($"{meter}m = {feet:0.0000}ft");
                 }
-            }
-
-
-            static double FeetToMeter(int feet) {
-                return feet * 0.3048;
-            }
-            static double MeterToFeet(int meter) {
-                return meter / 0.3048;
-
             }
         }
     }

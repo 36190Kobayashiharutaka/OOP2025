@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace DistamceConverter {
     public class FeetConverter {
 
-        static double FeetToMeter(int feet) {
+        public static double FromMeter(int feet) {
             return feet * 0.3048;
         }
-        static double MeterToFeet(int meter) {
+        public static double ToMeter(int meter) {
             return meter / 0.3048;
 
         }
