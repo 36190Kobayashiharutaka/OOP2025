@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DistamceConverter {
-    public class FeetConverter {
+    public static class FeetConverter {
 
         public static double FromMeter(int feet) {
             return feet * 0.3048;
