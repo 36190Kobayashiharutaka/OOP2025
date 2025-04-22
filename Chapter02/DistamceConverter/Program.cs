@@ -19,7 +19,7 @@
                         Console.WriteLine($"{feet}ft = {meter:0.0000}");
                     }
                 }
-            //フィートからメートルへの対応表を出力
+            //メートルかフィートへの対応表を出力
             static void PrintMeterToFeetList(int f, int e) {
                 for (int meter = f; meter <= e; meter++) {
                     double feet = MeterToFeet(meter);
