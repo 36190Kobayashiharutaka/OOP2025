@@ -7,15 +7,15 @@ class Program {
         Console.WriteLine("１：ヤードからメートル");
         Console.WriteLine("２：メートルからヤード");
         Console.Write("＞");
-        int choice = int.Parse(Console.ReadLine());
+        int n = int.Parse(Console.ReadLine());
 
-        if (choice == 1) {
+        if (n == 1) {
             Console.WriteLine();
             Console.Write("変換前(ヤード)：");
             int yard = int.Parse(Console.ReadLine());
             double meter = YardConverter.YardToMeter(yard);
             Console.WriteLine($"変換後(メートル):{meter:0.000}");
-        } else if (choice == 2) {
+        } else if (n == 2) {
             Console.WriteLine();
             Console.Write("変換前(メートル)：");
             int meter = int.Parse(Console.ReadLine());
