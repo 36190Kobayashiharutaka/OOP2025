@@ -1,46 +1,28 @@
 ﻿using Exercise02;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-internal class Program {
+class Program {
     static void Main(string[] args) {
-
         Console.WriteLine("***　変換アプリ　***");
-        Console.WriteLine("１：インチからメートル");
-        Console.WriteLine("２：メートルからインチ");
+        Console.WriteLine("１：ヤードからメートル");
+        Console.WriteLine("２：メートルからヤード");
         Console.Write("＞");
-        int n = int.Parse(Console.ReadLine());
+        int choice = int.Parse(Console.ReadLine());
 
-        Console.Write("はじめ：");
-        int start = int.Parse(Console.ReadLine());
-
-        Console.Write("おわり：");
-        int end = int.Parse(Console.ReadLine());
-
-        if (n == 1) {
-            PrintInchToMeterList(start, end);
+        if (choice == 1) {
+            Console.WriteLine();
+            Console.Write("変換前(ヤード)：");
+            int yard = int.Parse(Console.ReadLine());
+            double meter = YardConverter.YardToMeter(yard);
+            Console.WriteLine($"変換後(メートル):{meter:0.000}");
+        } else if (choice == 2) {
+            Console.WriteLine();
+            Console.Write("変換前(メートル)：");
+            int meter = int.Parse(Console.ReadLine());
+            double yard = YardConverter.MeterToYard(meter);
+            Console.WriteLine($"変換後(ヤード):{yard:0.000}");
         } else {
-            PrintMeterToInchList(start, end);
-        }
-
-
-        //インチからメートルへの対応表を出力
-        static void PrintInchToMeterList(int start, int end) {
-            for (int inch = start; inch <= end; inch++) {
-                double meter = InchConverter.MeterToInch(inch);
-                Console.WriteLine($"{inch}ih = {meter:0.0000}m");
-            }
-        }
-        //メートルからインチへの対応表を出力
-        static void PrintMeterToInchList(int start, int end) {
-            for (int meter = start; meter <= end; meter++) {
-                double inch = InchConverter.InchToMeter(meter);
-                Console.WriteLine($"{meter}m = {inch:0.0000}ih");
-            }
+            Console.WriteLine("無効な選択です。");
         }
     }
 }
