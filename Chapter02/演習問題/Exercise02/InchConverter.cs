@@ -10,10 +10,10 @@ namespace Exercise02 {
         private const double ratio = 0.0254;
 
         public static double InchToMeter(int inch) {
-            return inch * ratio;
+            return inch / ratio;
         }
         public static double MeterToInch(int meter) {
-            return meter / ratio;
+            return meter * ratio;
 
         }
     }
