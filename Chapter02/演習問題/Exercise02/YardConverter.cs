@@ -7,7 +7,7 @@
         public static double YardToMeter(int yard) {
             return yard * ratio;
         }
-
+            
         public static double MeterToYard(int meter) {
             return meter / ratio;  
         }
