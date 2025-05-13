@@ -17,15 +17,6 @@ namespace Exercise01 {
             ArtistName = artistName;
             Length = length;
         }
-
-        public override string ToString() {
-            return $"Title: {Title}, Artist: {ArtistName}, Length: {Length}秒";
-        }
-
         //2.1.2.
-        public static void Main(string[] args) {
-            Song mySong = new Song("Example Song", "Example Artist", 240);
-            System.Console.WriteLine(mySong);
-        }
     }
 }
