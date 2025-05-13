@@ -1,4 +1,6 @@
-﻿namespace Exercise01 {
+﻿using System;
+
+namespace Exercise01 {
     public class Program {
         static void Main(string[] args) {
             //2.1.3
@@ -20,11 +22,19 @@
         //2.1.4
         // Song オブジェクトの配列を受け取り、各 Song オブジェクトの内容をコンソールに出力するメソッド
         private static void printSongs(Song[] songs) {
-            // 配列内の各 Song オブジェクトに対して処理を行うループ
+#if false        // 配列内の各 Song オブジェクトに対して処理を行うループ
             foreach (var song in songs) {
                 // 現在の Song オブジェクトの ToString() メソッドを呼び出し、その結果をコンソールに出力
                 System.Console.WriteLine(song);
+                }
+#else   
+            foreach (var song in songs) {
+                Console.WriteLine(@"{0},{1},{2:m\:ss}",
+
+                     song.Title, song.ArtistName, TimeSpan.FromSeconds(song.Length));
             }
+#endif
+            Console.WriteLine();
         }
     }
 }
