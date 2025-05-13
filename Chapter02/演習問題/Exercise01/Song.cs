@@ -17,6 +17,16 @@ namespace Exercise01 {
             ArtistName = artistName;
             Length = length;
         }
+
         //2.1.2.
+        public string GetFormattedLength() {
+            int minutes = Length / 60;
+            int seconds = Length % 60;
+            return $"{minutes}:{seconds:D2}";
+        }
+
+        public override string ToString() {
+            return $"Title: {Title}, Artist: {ArtistName}, Length: {GetFormattedLength()}";
+        }
     }
 }
