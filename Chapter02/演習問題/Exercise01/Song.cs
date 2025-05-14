@@ -16,11 +16,11 @@ namespace Exercise01 {
 
         // Song クラスのコンストラクター
         // 引数としてタイトル、アーティスト名、長さを取る
-        public Song(string title, string artistName, int length) {
-            Title = title;
-            ArtistName = artistName;
-            Length = length;
-        }
+       // public Song(string title, string artistName, int length) {
+         //   Title = title;
+           // ArtistName = artistName;
+            //Length = length;
+        //}
 
      //2.1.2
         // 曲の長さを「分:秒」形式の文字列で返すメソッド

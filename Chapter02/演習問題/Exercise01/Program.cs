@@ -6,22 +6,52 @@ namespace Exercise01 {
             //2.1.3
             // メインのエントリーポイント
             static void Main(string[] args) {
+                var songs = new List<Song>();
                 // Song オブジェクトの配列を作成し、初期化
-                var songs = new Song[] {
-            new Song("Let it be", "The Beatles", 243),
-            new Song("Bridge Over Troubled Water", "Simon & Garfunkel", 293),
-            new Song("Close To You", "Carpenters", 276),
-            new Song("Honesty", "Billy Joel", 231),
-            new Song("I Will Always Love You", "Whitney Houston", 273),
-        };
+                while (true) {
+                    //*******曲の登録*******を出力
+                    Console.WriteLine("*******曲の登録*******");
+                    //曲名を出力
+                    Console.Write("曲名：");
+                    //入力された曲名を取得
+                    string? title = Console.ReadLine();
 
-                // 配列に格納されたすべての Song オブジェクトの内容をコンソールに出力するメソッドを呼び出す
-                printSongs(songs);
+                    //endが入力されたら登録終了
+                    if (title.Equals("end", StringComparison.OrdinalIgnoreCase)) break;
+
+                    //アーティスト名を出力
+                    Console.WriteLine("アーティスト名:");
+                    //入力されたアーティスト名を取得
+                    string? artistName = Console.ReadLine();
+
+                    //演奏時間（秒）：  を出力
+                    Console.WriteLine("演奏時間（秒）：");
+                    //入力された演奏時間を取得
+                    int length = int.Parse(Console.ReadLine());
+
+                    //Songインスタンスを生成
+                    //Song song = new Song(title, artistName, length);
+                    Song song = new Song() {
+                        Title = title,
+                        ArtistName = artistName,
+                        Length = length
+                    };
+                    //歌データを入れるリストオブジェクトへ登録
+
+                    songs.Add(song);
+
+                    Console.WriteLine();//改行
+
+                    // 配列に格納されたすべての Song オブジェクトの内容をコンソールに出力するメソッドを呼び出す
+                    printSongs(songs);
+
+
+                }
             }
         }
         //2.1.4
         // Song オブジェクトの配列を受け取り、各 Song オブジェクトの内容をコンソールに出力するメソッド
-        private static void printSongs(Song[] songs) {
+        private static void printSongs(IEnumerable<Song>songs) {
 #if false        // 配列内の各 Song オブジェクトに対して処理を行うループ
             foreach (var song in songs) {
                 // 現在の Song オブジェクトの ToString() メソッドを呼び出し、その結果をコンソールに出力
