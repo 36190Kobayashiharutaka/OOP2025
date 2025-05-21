@@ -34,21 +34,13 @@ namespace Exercise01 {
         }
 
         private static void Exercise3(List<int> numbers) {
-            var dates = numbers.Where(number => number >= 50);
+            numbers.Where(n => n >= 50).ToList().ForEach(Console.WriteLine);
 
-            foreach (var number in dates) {
-                Console.WriteLine(number);
-            }
         }
 
         private static void Exercise4(List<int> numbers) {
-            var dates = numbers.Select(number => number * 2);
+            numbers.Select(number => number * 2).ToList().ForEach(Console.WriteLine);
 
-            List<int> doubledNumbersList = dates.ToList();
-
-            foreach (var number in doubledNumbersList) {
-                Console.WriteLine(number);
-            }
         }
     }
 }
