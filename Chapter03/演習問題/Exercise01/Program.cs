@@ -34,11 +34,15 @@ namespace Exercise01 {
         }
 
         private static void Exercise3(List<int> numbers) {
-            
+            var largeNumbers = numbers.Where(number => number >= 50);
+
+            foreach (var number in largeNumbers) {
+                Console.WriteLine(number);
+            }
         }
 
         private static void Exercise4(List<int> numbers) {
-           
+
         }
     }
 }
