@@ -21,26 +21,23 @@ namespace Exercise01 {
         }
 
         private static void Exercise1(int[] numbers) {
-            int[] number = [5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35];
-            Console.WriteLine($"最大値: {numbers.Max()}");
+            Console.WriteLine(numbers.Max());
         }
 
         private static void Exercise2(int[] numbers) {
-            int[] number = [5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35];
             Console.WriteLine(string.Join(" ", numbers.Skip(numbers.Length - 2).Take(2)));
         }
 
         private static void Exercise3(int[] numbers) {
-            int[] number = [5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35];
             Console.WriteLine(string.Join(" ", numbers.Select(n => n.ToString("D3"))));
         }
 
         private static void Exercise4(int[] numbers) {
-            throw new NotImplementedException();
+            Console.WriteLine(string.Join(" ", numbers.OrderBy(n => n).Take(3)));
         }
 
         private static void Exercise5(int[] numbers) {
-            throw new NotImplementedException();
+            Console.WriteLine(numbers.Distinct().Count(n => n > 10));
         }
     }
 }
