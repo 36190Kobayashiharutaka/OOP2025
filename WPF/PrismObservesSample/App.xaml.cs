@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace HelloWorld {
+namespace PrismObservesSample {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>

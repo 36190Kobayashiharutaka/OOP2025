@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace HelloWorld {
+namespace CustomerApp {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
