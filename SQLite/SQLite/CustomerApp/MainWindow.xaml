@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CustomerApp"
         mc:Ignorable="d"
         Title="顧客管理アプリケーション" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="-12,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2*" />
