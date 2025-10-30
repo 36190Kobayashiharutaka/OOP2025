@@ -113,25 +113,25 @@ namespace Exercise01 {
         }
         //模範解答
         //private static void Exercise1_7() {
-            //var groups = Library.Categories
-                //.Where(x => x.Name.Equals("Development"))
-                //.Join(Library.Books,
-                    //c => c.Id,
-                    //b => b.CategoryId,
-                    //(c, b) => new {
-                        //b.Title,
-                        //b.PublishedYear,
-                    //})
+        //var groups = Library.Categories
+        //.Where(x => x.Name.Equals("Development"))
+        //.Join(Library.Books,
+        //c => c.Id,
+        //b => b.CategoryId,
+        //(c, b) => new {
+        //b.Title,
+        //b.PublishedYear,
+        //})
 
-                //.GroupBy(x => x.PublishedYear)
-                //.OrderBy(x => x.Key);
-            //foreach (var group in groups) {
-                //Console.WriteLine($"＃ {group.Key}");
-                //foreach (var book in group)
-                    //Console.WriteLine($"   {book.Title}");
-            //}
+        //.GroupBy(x => x.PublishedYear)
+        //.OrderBy(x => x.Key);
+        //foreach (var group in groups) {
+        //Console.WriteLine($"＃ {group.Key}");
+        //foreach (var book in group)
+        //Console.WriteLine($"   {book.Title}");
         //}
-        
+        //}
+
 
         private static void Exercise1_8() {
             foreach (var c in Library.Categories
@@ -139,5 +139,20 @@ namespace Exercise01 {
                    .Where(x => x.Count >= 4))
                 Console.WriteLine(c.Name);
         }
+        //模範解答
+        //private static void Exercise1_8() {
+        //var categoryName = Library.Categories
+        //.GroupJoin(Library.Books,
+        //c => c.Id,
+        //b => b.CategoryId,
+        //(c, book) => new{
+        //CategoryName = c.Name,
+        //Count = book.Count(),
+        //})
+        //.Where(x => x.Count >= 4)
+        //Select(x => x.CategoryName);
+        //foreach (var name in categoryName) {
+        //Console.WriteLine(name);
+        // 
     }
 }
