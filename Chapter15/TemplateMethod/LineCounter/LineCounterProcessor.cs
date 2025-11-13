@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TextFileProcessor;
 
 namespace LineCounter {
-    internal class LineCounterProcessor : TextProcessor {
+    internal class LineCounterProcessor : TextProcessor{
         private int _count = 0;
         private string _searchWord = "";
 
@@ -16,10 +16,10 @@ namespace LineCounter {
             _searchWord = Console.ReadLine();
         }
         protected override void Execute(string line) {
-
+            
         }
 
         protected override void Terminate() => Console.WriteLine("{0}の個数：{1}", _searchWord, _count);
-
+            
     }
 }
