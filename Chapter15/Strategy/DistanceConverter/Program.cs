@@ -11,7 +11,7 @@ namespace DistanceConverter {
 
             var converter = new DistanceConverter(from, to);
             var result = converter.Convert(distance);
-            var text = $"{distance}{from.UnitName}は、{result:0.0000}{to.UnitName}です|n";
+            var text = $"{distance}{from.UnitName}は、{result:0.0000}{to.UnitName}です";
             Console.WriteLine(text);
 
             static double GetDistance(ConverterBase from) {
