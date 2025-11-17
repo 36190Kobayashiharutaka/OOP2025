@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TextFileProcessor;
 
-namespace LineCounter {
-    internal class LineCounterProcessor : TextProcessor {
-        private int _count = 0;
-        private string _searchWord = "";
-
-        protected override void Initialize(string fname) {
-            _count = 0;
-            Console.Write("カウントしたい単語：");
-            _searchWord = Console.ReadLine();
-        }
-        protected override void Execute(string line) {
-
+namespace TextFileProcessor {
+    public abstract class TextProcessor {
+        public static void Run<T>(string fileName) where T : TextProcessor, new() {
+            var self = new T();
+            self.Process(fileName);
         }
 
-        protected override void Terminate() => Console.WriteLine("{0}の個数：{1}", _searchWord, _count);
+        private void Process(string fileName) {
+            Initialize(fileName);
+            var lines = File.ReadLines(fileName);
+            foreach (var line in lines) {
+                Execute(line);
+            }
+            Terminate();
+        }
 
+        protected virtual void Initialize(string fname) { }
+        protected virtual void Execute(string line) { }
+        protected virtual void Terminate() { }
     }
 }
