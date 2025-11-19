@@ -14,6 +14,7 @@ namespace TextFileProcessorDI {
 
         public void Initialize(string fname) {
         }
+
         public void Terminate() {
 
         }
