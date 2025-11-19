@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TextFileProcessorDI {
-    public class ITextFileService {
+    public class LineOutputService {
     }
 }
